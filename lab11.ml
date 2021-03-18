@@ -47,7 +47,7 @@ Consider this snippet of code, which defines an algebraic data type
       | Combine of ('a -> 'a) * ('a combine)
       | Base of ('a -> 'a) * ('a option) ;;
 
-    let rec f (x : 'a combine) (a : 'a) : 'a =
+    let rec f x a =
       match x with
       | Base (f, None) -> f a
                           ^^^ -----------a
@@ -60,7 +60,7 @@ Consider this snippet of code, which defines an algebraic data type
 
 For each of the subexpressions underlined with ^^^ and labeled with a
 letter, specify the type of the subexpression in the context in which
-it appears. If the unerlined element is not a single subexpression (and
+it appears. If the underlined element is not a single subexpression (and
 therefore has no type), answer "no type".
 
 ......................................................................
@@ -286,7 +286,7 @@ or in parallel.
 
 So that later problems use the same type definition, after you've
 defined the type, check it against our intended type definition at
-<http://url/cs51/io/lab11-2>.
+<http://url.cs51.io/lab11-2>.
 ....................................................................*)
 
 type circuit = NotImplemented ;;
